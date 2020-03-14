@@ -1,0 +1,38 @@
+<h3 [ngStyle]= "{
+    'backgroundColor' : (ativo ? 'blue' : 'gray'),
+    'color' : (ativo ? 'white' : 'black'),
+    'fontWeight' : (ativo ? 'bold' : 'normal'),
+    'fontSize' : tamanhoFonte + 'px'
+}">
+styles com dva ngStyles
+</h3>
+<br>
+tamanho Fonte <input type="text" [(ngModel)] = "tamanhoFonte">
+<br>
+<button [ngStyle]= "{
+    'backgroundColor' : (ativo ? 'blue' : 'gray'),
+    'color' : (ativo ? 'white' : 'black'),
+    'fontWeight' : (ativo ? 'bold' : 'normal'),
+    'fontSize' : tamanhoFonte + 'px'
+}"
+(click)="mudarAtivo()">           
+mudar Atributos
+</button>
+<hr>
+<br>
+<h3>operrador Elvis (?)</h3>
+<p>Tarefa: {{tarefa?.desc}}</p>
+<p>Responsável: {{tarefa?.responsavel?.nome}}</p>
+<p>Depto Responsável:{{tarefa.responsavel?.depto}}</p>
+<hr>
+<hr>
+<hr>
+<br>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <ng-content select=".titulo"></ng-content>
+    </div>
+    <div class="panel-body">
+        <ng-content select=".corpo"></ng-content>
+    </div>
+</div>
